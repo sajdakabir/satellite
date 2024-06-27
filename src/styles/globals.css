@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --dashboard: #1B1F22;
+    --sidebar: #111416;
+    --sidebar-hover: #232629;
+    --sidebar-active: #292B2D;
+    --text: #9C9C9C;
+    --dull-text: #707070;
+    --text-hover: #DDDDDD;
+    --divider: #333333;
+  }
+}
+
+
+@layer base {
+  input {
+    @apply rounded-xl text-sm placeholder:text-text focus:outline-none px-3 py-1 border-[1px] border-[#2a2c31] bg-[#4d4d4d0a] text-text-hover;
+  }
+
+  button,
+  a {
+    @apply active:scale-95 duration-150 disabled:active:scale-100;
+  }
+
+  /* ===================== */
+  /* Command Dialog Styling Overrides */
+  /* ===================== */
+  [cmdk-item] {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  [cmdk-group-heading] {
+    color: var(--text-hover) !important;
+    opacity: 40% !important;
+    font-weight: 300 !important;
+  }
+
+  [cmdk-input] {
+    height: auto !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+
+  /* ===================== */
+  /* Srollbar Styling      */
+  /* ===================== */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--dull-text);
+    border-radius: 4px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text);
+  }
+
+
+  /* ===================== */
+  /* Select Styling         */
+  /* ===================== */
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: var(--text-hover);
+    background: var(--sidebar-hover);
+  }
+
+  ::selection {
+    color: var(--text-hover);
+    background: var(--sidebar-hover);
+  }
+}
